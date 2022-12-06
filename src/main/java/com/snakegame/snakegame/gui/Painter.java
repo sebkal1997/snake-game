@@ -1,12 +1,15 @@
 package com.snakegame.snakegame.gui;
 
+import static com.snakegame.snakegame.logic.Board.FOOD_COLOR;
+import static com.snakegame.snakegame.logic.Board.HEIGHT;
+import static com.snakegame.snakegame.logic.Board.SIZE;
+import static com.snakegame.snakegame.logic.Board.WIDTH;
+
 import com.snakegame.snakegame.logic.Board;
 import com.snakegame.snakegame.logic.Cell;
 import com.snakegame.snakegame.logic.Snake;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
-import static com.snakegame.snakegame.logic.Board.*;
 
 public class Painter {
 
@@ -29,7 +32,7 @@ public class Painter {
 
         //Display score
         graphicsContext.setFill(Color.WHITE);
-        graphicsContext.fillText("Score: " + board.getSnake().getBody().size() * 10, 10, Board.HEIGHT - 10);
+        graphicsContext.fillText("Score: " + (board.getSnake().getBody().size() * 10 - 10), 10, Board.HEIGHT - 10);
     }
 
     public static void paintGameOver(GraphicsContext graphicsContext) {
